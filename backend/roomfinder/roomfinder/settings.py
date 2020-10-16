@@ -39,14 +39,33 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework.authtoken',
     'rest_framework',
-    'accounts'
+    'accounts',
+    'djoser'
+
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
+    'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
-    ]
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
 }
+
+AUTH_USER_MODEL = "accounts.User"
+DJOSER = {
+    'LOGIN_FIELD':'email',
+    'USER_CREATE_PASSWORD_RETYPE': True,
+    'SERIALIZERS':{
+        'user_create':'authentication.serializers.UserCreateSerializer',
+        'user':'authentication.serializers.UserCreateSerializer'
+    }
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
