@@ -25,7 +25,16 @@ class PostView(mixins.ListModelMixin,
       return self.create(request, *args, **kwargs)
 
 
-""" class TestView(APIView):
+class PostCreateView(mixins.ListModelMixin,generics.CreateAPIView):
+    serializer_class = PostSerializer
+    queryset = Post.objects.all
+
+    def get(self, request, *args, **kwargs):
+      return self.list(request, *args, **kwargs)
+
+
+
+class TestView(APIView):
 
     permission_classes = (IsAuthenticated, )
 
@@ -39,4 +48,4 @@ class PostView(mixins.ListModelMixin,
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
-        return Response(serializer.errors) """
+        return Response(serializer.errors)
