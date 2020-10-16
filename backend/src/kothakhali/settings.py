@@ -26,6 +26,7 @@ SECRET_KEY = 'e@3e)2us7e)9fuh$v@($mf*hal)d5d^%olatzor@o#!cod0*k9'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'authentication.User'
 
 
 # Application definition
