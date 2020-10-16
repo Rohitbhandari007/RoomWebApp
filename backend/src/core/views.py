@@ -10,6 +10,6 @@ class TestView(APIView):
     def get(self, request, *args, **kwargs):
         data={
             'name':'rohit',
-            'age': '20'
+            'age': '20',
         }
         return Response(data)
