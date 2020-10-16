@@ -40,9 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'authentication',
+    'corsheaders',
 ]
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -124,5 +128,5 @@ STATIC_URL = '/static/'
 
 
 REST_FRAMEWORK = {
-    NON_FIELD_ERRORS_KEY : 'error'
+    'NON_FIELD_ERRORS_KEY' : 'error'
 }

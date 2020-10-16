@@ -10,11 +10,13 @@ class RegisterSerializer(serializers.ModelSerializer):
         fields = ['email', 'username', 'password']
 
     def validate(self, attrs):
-        email=attrs.get('email','')
-        username=attrs.get('username','')
+        email=attrs.get('email')
+        username=attrs.get('username')
 
         if not username.isalnum():
-            raise serializers.ValidationError('The username should only contain alpha-numeric characters')
+            raise serializers.ValidationError(
+                'The username should only contain alpha-numeric characters'
+                )
         return attrs
 
     def create(self, validated_data):

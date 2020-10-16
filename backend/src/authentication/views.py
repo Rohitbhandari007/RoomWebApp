@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from rest_framework import generics
+from rest_framework import generics,status
 from .serializers import RegisterSerializer
 from rest_framework.response import Response
 
@@ -15,4 +15,5 @@ class RegisterView(generics.GenericAPIView):
 
         user_data = serializer.data
 
-        return Response(user_data, status=status.HTTP_201_CREATED)
+        return Response(user_data,status=status.HTTP_201_CREATED)
+
