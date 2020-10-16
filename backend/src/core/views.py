@@ -12,11 +12,9 @@ from rest_framework.response import Response
 
 class TestView(APIView):
     def get(self, request, *args, **kwargs):
-        data={
-            'name':'rohit',
-            'age': '20',
-        }
-        return Response(data)
+      qs = Post.objects.all()
+      serializer = PostSerializer(qs, many=True)
+      return Response(serializer.data)
 
     def post(self, request, *args, **kwargs):
         serializer = PostSerializer(data=request.data)
