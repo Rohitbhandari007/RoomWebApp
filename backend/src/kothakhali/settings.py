@@ -124,5 +124,5 @@ STATIC_URL = '/static/'
 
 
 REST_FRAMEWORK = {
-    NON_FIELD_ERRORS_KEY
+    NON_FIELD_ERRORS_KEY : 'error'
 }
