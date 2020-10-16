@@ -41,9 +41,18 @@ INSTALLED_APPS = [
     'core',
     'rest_framework.authtoken',
     'dj_rest_auth',
+    'knox',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dj_rest_auth.registration',
+    'corsheaders'
 ]
+SITE_ID = 1
 
 MIDDLEWARE = [
+    'corseheaders.middleware.CorsMiddleware'
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -129,3 +138,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication'
     ]
 }
+
+CORS_ORIGIN_ALLOW = True
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_REQUIRED = False
