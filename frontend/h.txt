@@ -1,6 +1,0 @@
-<<<<<<< HEAD
-haha
-=======
-helo boi
->>>>>>> 6e468dd5bdc14864365a86e93a0b30145b6254e6
-LOL
