@@ -10,10 +10,17 @@ loginButton.addEventListener("click", (e)=>{
     let contstraints = {
         method: "POST",
         headers:{
-            "Content-Type": "application/json" 
+            "content-type": "application/json" 
         },
         body: JSON.stringify(data)
     }
-    fetch("/api", contstraints);
-    console.log(data);
+    fetch("/api", contstraints)
+    .then((res)=>{
+        res.json();
+    }).then((data)=>{
+        console.log("Data from Server = "+ data)
+    }).catch((error)=>{
+        console.log("An error occured" + error);
+    });
+
 })
