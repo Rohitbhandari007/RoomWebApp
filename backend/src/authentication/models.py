@@ -15,20 +15,21 @@ class UserManager(BaseUserManager):
         user=self.model(username=username, email=self.normalize_email(email),)
         user.set_password(password)
         user.save()
-    
+        
+        return user
 
         def create_superuser(self, username, email, password=None):
 
-        if password is None:
-            raise TypeError('Password should not be none')
-        if email is None:
-            raise TypeError('Users should have email')
+            if password is None:
+                raise TypeError('Password should not be none')
+            if email is None:
+                raise TypeError('Users should have email')
 
-        user=self.create_user(username,email,password)
-        user.is_superuser =True
-        user.is_staff=True
-        user.save()
-        return user
+            user=self.create_user(username,email,password)
+            user.is_superuser =True
+            user.is_staff=True
+            user.save()
+            return user
 
 class User(AbstractBaseUser,PermissionsMixin):
     username = models.CharField(max_length=225, unique=True, db_index=True)
