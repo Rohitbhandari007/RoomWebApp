@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: slategray;
+}
+.divforform {
+  background-color: rgb(235, 222, 222);
+  height: fit-content;
+  width: 50%;
+  padding: 10vh;
+}
+.divforform form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-family: "Staatliches", cursive;
+}
+#email {
+  height: 5vh;
+  width: 20vw;
+  margin: 5px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.5) 2px 2px;
+}
+#username {
+  height: 5vh;
+  width: 20vw;
+  margin: 5px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.5) 2px 2px;
+}
+
+#pass {
+  height: 5vh;
+  width: 20vw;
+  margin: 5px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.5) 2px 2px;
+}
+
+#registerbtn {
+  height: 5vh;
+  width: 20vw;
+  margin: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: none;
+  background-color: rgb(64, 161, 161);
+}
