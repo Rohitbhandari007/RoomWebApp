@@ -21,10 +21,11 @@ registerButton.addEventListener("click", async (e) => {
         let response = await fetch("http://localhost:8000/api/register/", contstraints);
         response = await response.json();
         console.log(response)
+        window.location.href = "D:/programming%20stuff/ROOM%20WEB%20APP/RoomWebApp/public/login.html";
     } catch(err) {
         console.error(err)
     }
- 
+    
 })
     
     
