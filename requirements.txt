@@ -1,2 +1,4 @@
 Django==2.2.4
 djangorestframework==3.10.2
+django-rest-knox
+django-cors-headers

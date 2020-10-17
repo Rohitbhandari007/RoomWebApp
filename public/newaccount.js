@@ -16,6 +16,7 @@ loginButton.addEventListener("click", (e)=>{
             "content-type": "application/json" 
         },
         body: JSON.stringify(data)
+<<<<<<< HEAD
     }
     fetch("/api", contstraints)
     .then((res)=>{
@@ -25,5 +26,9 @@ loginButton.addEventListener("click", (e)=>{
     }).catch((error)=>{
         console.log("An error occured" + error);
     });
+=======
+    };
+    fetch("http://127.0.0.1:8000/api/register/", contstraints);
+>>>>>>> 980c5359589b5fb3a9402a9dc5e0e827f6f8e6ad
 
 })
