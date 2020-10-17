@@ -12,9 +12,7 @@ loginButton.addEventListener("click", (e)=>{
     let data = {email, username, password};
     let contstraints = {
         method: "POST",
-        headers:{
-            "Content-Type": "application/json" 
-        },
+        headers: {"content-type": "application/json"},
         body: JSON.stringify(data)
     };
     fetch("http://127.0.0.1:8000/auth/register/", contstraints);
