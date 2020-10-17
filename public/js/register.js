@@ -1,10 +1,10 @@
 const emailField = document.querySelector("#email");
 const passwordField = document.querySelector("#pass");
-const loginButton = document.querySelector("#loginbtn");
+const registerButton = document.querySelector("#registerbtn");
 const usernameField = document.querySelector("#username");
 
 
-loginButton.addEventListener("click", (e) => {
+registerButton.addEventListener("click", (e) => {
     e.preventDefault();
     let email = emailField.value;
     let password = passwordField.value;
