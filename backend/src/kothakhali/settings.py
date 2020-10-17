@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'main',
     'corsheaders',
+    'rest_framework.authtoken',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -131,5 +132,7 @@ STATIC_URL = '/static/'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'knox.auth.TokenAuthentication',
+        'rest_framework.authentication.TokenAuthentication'
     ]
 }
+

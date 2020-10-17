@@ -1,13 +1,15 @@
 from django.db import models
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 
-User = get_user_model()
 
 class Post(models.Model):
+    
     title = models.CharField(max_length=100)
-    description =models.TextField()
+    description =models.TextField(default=False)
     timestamp = models.DateTimeField(auto_now_add=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    location = models.TextField(default=False)
+    price=models.TextField(default=False)
 
 
     def __str__(self):
