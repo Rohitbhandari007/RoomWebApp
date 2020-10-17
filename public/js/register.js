@@ -24,7 +24,7 @@ registerButton.addEventListener("click", async (e) => {
     } catch(err) {
         console.error(err)
     }
-    
+ 
 })
     
     
