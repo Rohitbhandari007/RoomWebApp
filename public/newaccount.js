@@ -15,6 +15,6 @@ loginButton.addEventListener("click", (e)=>{
         headers: {"content-type": "application/json"},
         body: JSON.stringify(data)
     };
-    fetch("http://127.0.0.1:8000/auth/register/", contstraints);
+    fetch("http://127.0.0.1:8000/api/register/", contstraints);
     console.log(data);
 })
