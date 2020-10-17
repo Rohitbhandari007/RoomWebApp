@@ -3,7 +3,6 @@ const passwordField = document.querySelector("#pass");
 const registerButton = document.querySelector("#registerbtn");
 const usernameField = document.querySelector("#username");
 
-
 registerButton.addEventListener("click", (e) => {
     e.preventDefault();
     let email = emailField.value;
@@ -20,10 +19,12 @@ registerButton.addEventListener("click", (e) => {
 
     fetch("http://127.0.0.1:8000/api/register/", contstraints)
         .then((res) => {
-            return res.json();
+            console.log(res.body)
+            return res.text();
         })
         .then((source) => {
-            console.log("Data from Server = " + source.user);
+            console.log( typeof source)
+            console.log("Data from Server = " + JSON.parse(source));
         })
         .catch((error) => {
             console.log("An error occured" + error);
