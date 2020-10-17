@@ -2,6 +2,10 @@ from django.shortcuts import render
 from rest_framework import generics,status
 from .serializers import RegisterSerializer
 from rest_framework.response import Response
+from  rest_framework_simplejwt.tokens import RefreshToken
+from .models import User
+from .utils import Util
+
 
 class RegisterView(generics.GenericAPIView):
 
@@ -12,8 +16,13 @@ class RegisterView(generics.GenericAPIView):
         serializer=self.serializer_class(data=user)
         serializer.is_valid(raise_exception=True)
         serializer.save()
-
         user_data = serializer.data
+
+        #Email account activation
+        user=User.objects.get(email=user_data['email'])
+        token=RefreshToken.for_user(user)
+
+        Util.send_email(data)
 
         return Response(user_data,status=status.HTTP_201_CREATED)
 
