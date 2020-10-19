@@ -14,4 +14,13 @@ class PostSerializer(serializers.ModelSerializer):
             'owner',
             'location',
             'price',
+            'image'
         )
+
+class PictureSerializer(serializers.ModelSerializer):
+     
+     class Meta:
+         model = Post
+         fields = (
+             'image',
+         )

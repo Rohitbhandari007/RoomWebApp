@@ -10,6 +10,7 @@ class Post(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     location = models.TextField(default=False)
     price=models.TextField(default=False)
+    image=models.ImageField(upload_to='pictures/%Y/%m/%d/', max_length=255, null=True, blank=True)
 
 
     def __str__(self):
